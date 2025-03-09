@@ -1,0 +1,2050 @@
+[
+    {
+        "id": 1,
+        "name": "Wheat",
+        "price": 150,
+        "category": "Cereals",
+        "image": "/images/Wheat.jpg",
+        "growthMaterials": {
+          "fertilizer": {
+            "name": "Nitrogen-based fertilizers",
+            "image": "/images/Nitrogen_based_fertilizers.jpg",
+            "price": 30
+          },
+          "additionalMaterials": [
+            {
+              "name": "Phosphorus",
+              "image": "/images/Phosphorus.jpg",
+              "price": 20
+            },
+            {
+              "name": "Potassium",
+              "image": "/images/Potassium.jpg",
+              "price": 25
+            }
+          ]
+        }
+      },
+      {
+        "id": 2,
+        "name": "Rice",
+        "price": 100,
+        "category": "Cereals",
+        "image": "/images/Rice.jpg",
+        "growthMaterials": {
+          "fertilizer": {
+            "name": "Nitrogen",
+            "image": "/images/Nitrogen.jpg",
+            "price": 28
+          },
+          "additionalMaterials": [
+            {
+              "name": "Potassium",
+              "image": "/images/Potassium.jpg",
+              "price": 25
+            },
+            {
+              "name": "Zinc Sulfate",
+              "image": "/images/Zinc_Sulfate.jpg",
+              "price": 15
+            }
+          ]
+        }
+      },
+      {
+        "id": 3,
+        "name": "Maize (corn)",
+        "price": 80,
+        "category": "Cereals",
+        "image": "/images/Maize (corn).jpg",
+        "growthMaterials": {
+          "fertilizer": {
+            "name": "Nitrogen",
+            "image": "/images/Nitrogen.jpg",
+            "price": 28
+          },
+          "additionalMaterials": [
+            {
+              "name": "Potassium",
+              "image": "/images/Potassium.jpg",
+              "price": 25
+            },
+            {
+              "name": "Boron",
+              "image": "/images/Boron.jpg",
+              "price": 10
+            }
+          ]
+        }
+      },
+      {
+        "id": 4,
+        "name": "Barley",
+        "price": 200,
+        "category": "Cereals",
+        "image": "/images/Barley_grain.jpg",
+        "growthMaterials": {
+          "fertilizer": {
+            "name": "Nitrogen",
+            "image": "/images/Nitrogen.jpg",
+            "price": 28
+          },
+          "additionalMaterials": [
+            {
+              "name": "Potassium",
+              "image": "/images/Potassium.jpg",
+              "price": 25
+            },
+            {
+              "name": "Sulfur",
+              "image": "/images/Sulfur.jpg",
+              "price": 12
+            }
+          ]
+        }
+      },
+      {
+        "id": 5,
+        "name": "Millet (bajra)",
+        "price": 120,
+        "category": "Cereals",
+        "image": "/images/Millet (bajra).jpg",
+        "growthMaterials": {
+          "fertilizer": {
+            "name": "Nitrogen",
+            "image": "/images/Nitrogen.jpg",
+            "price": 28
+          },
+          "additionalMaterials": [
+            {
+              "name": "Potassium",
+              "image": "/images/Potassium.jpg",
+              "price": 25
+            },
+            {
+              "name": "Zinc",
+              "image": "/images/Zinc.jpg",
+              "price": 18
+            }
+          ]
+        }
+      },
+      {
+        "id": 6,
+        "name": "Sorghum (jowar)",
+        "price": 90,
+        "category": "Cereals",
+        "image": "/images/Sorghum (jowar).jpg",
+        "growthMaterials": {
+          "fertilizer": {
+            "name": "Nitrogen",
+            "image": "/images/Nitrogen.jpg",
+            "price": 28
+          },
+          "additionalMaterials": [
+            {
+              "name": "Potassium",
+              "image": "/images/Potassium.jpg",
+              "price": 25
+            },
+            {
+              "name": "Iron",
+              "image": "/images/Iron.jpg",
+              "price": 14
+            }
+          ]
+        }
+      },
+      {
+        "id": 7,
+        "name": "Lentil",
+        "price": 220,
+        "category": "Pulses",
+        "image": "/images/Lentils (masoor).jpg",
+        "growthMaterials": {
+          "fertilizer": {
+            "name": "Phosphorus",
+            "image": "/images/Phosphorus.jpg",
+            "price": 22
+          },
+          "additionalMaterials": [
+            {
+              "name": "Rhizobium Inoculant",
+              "image": "/images/Rhizobium_Inoculant.jpg",
+              "price": 35
+            },
+            {
+              "name": "Potassium",
+              "image": "/images/Potassium.jpg",
+              "price": 25
+            }
+          ]
+        }
+      },
+      {
+        "id": 8,
+        "name": "Chickpea",
+        "price": 180,
+        "category": "Pulses",
+        "image": "/images/Chickpeas (chana).jpg",
+        "growthMaterials": {
+          "fertilizer": {
+            "name": "Phosphorus",
+            "image": "/images/Phosphorus.jpg",
+            "price": 22
+          },
+          "additionalMaterials": [
+            {
+              "name": "Potassium",
+              "image": "/images/Potassium.jpg",
+              "price": 25
+            },
+            {
+              "name": "Rhizobium Inoculant",
+              "image": "/images/Rhizobium_Inoculant.jpg",
+              "price": 35
+            }
+          ]
+        }
+      },
+      {
+        "id": 9,
+        "name": "Mung beans",
+        "price": 130,
+        "category": "Pulses",
+        "image": "/images/Mung beans.jpg",
+        "growthMaterials": {
+          "fertilizer": {
+            "name": "Phosphorus",
+            "image": "/images/Phosphorus.jpg",
+            "price": 22
+          },
+          "additionalMaterials": [
+            {
+              "name": "Rhizobium Inoculant",
+              "image": "/images/Rhizobium_Inoculant.jpg",
+              "price": 35
+            },
+            {
+              "name": "Potassium",
+              "image": "/images/Potassium.jpg",
+              "price": 25
+            }
+          ]
+        }
+      },
+      {
+        "id": 10,
+        "name": "Black gram (urad)",
+        "price": 200,
+        "category": "Pulses",
+        "image": "/images/Black gram (urad).jpg",
+        "growthMaterials": {
+          "fertilizer": {
+            "name": "Phosphorus",
+            "image": "/images/Phosphorus.jpg",
+            "price": 22
+          },
+          "additionalMaterials": [
+            {
+              "name": "Rhizobium Inoculant",
+              "image": "/images/Rhizobium_Inoculant.jpg",
+              "price": 35
+            },
+            {
+              "name": "Potassium",
+              "image": "/images/Potassium.jpg",
+              "price": 25
+            }
+          ]
+        }
+      },
+      {
+        "id": 11,
+        "name": "Kidneybeans",
+        "price": 140,
+        "category": "Pulses",
+        "image": "/images/Kidney beans (rajma).jpg",
+        "growthMaterials": {
+            "fertilizer": {
+                "name": "Phosphorus",
+                "image": "/images/Phosphorus.jpg",
+                "price": 22
+            },
+            "additionalMaterials": [
+                {
+                    "name": "Rhizobium Inoculant",
+                    "image": "/images/Rhizobium_Inoculant.jpg",
+                    "price": 35
+                },
+                {
+                    "name": "Potassium",
+                    "image": "/images/Potassium.jpg",
+                    "price": 25
+                }
+            ]
+        }
+      },
+      {
+        "id": 12,
+        "name": "Pigeon peas",
+        "price": 160,
+        "category": "Pulses",
+        "image": "/images/Pigeon peas.jpg",
+        "growthMaterials": {
+            "fertilizer": {
+                "name": "Phosphorus",
+                "image": "/images/Phosphorus.jpg",
+                "price": 22
+            },
+            "additionalMaterials": [
+                {
+                    "name": "Rhizobium Inoculant",
+                    "image": "/images/Rhizobium_Inoculant.jpg",
+                    "price": 35
+                },
+                {
+                    "name": "Potassium",
+                    "image": "/images/Potassium.jpg",
+                    "price": 25
+                }
+            ]
+        }
+      },
+      {
+        "id": 13,
+        "name": "Potatoes",
+        "price": 50,
+        "category": "Vegetables",
+        "image": "/images/Potatoes.jpg",
+        "growthMaterials": {
+            "fertilizer": {
+                "name": "Nitrogen",
+                "image": "/images/Nitrogen.jpg",
+                "price": 28
+            },
+            "additionalMaterials": [
+                {
+                    "name": "Phosphorus",
+                    "image": "/images/Phosphorus.jpg",
+                    "price": 20
+                },
+                {
+                    "name": "Potassium",
+                    "image": "/images/Potassium.jpg",
+                    "price": 25
+                }
+            ]
+        }
+      },
+      {
+        "id": 14,
+        "name": "Tomatoes",
+        "price": 40,
+        "category": "Vegetables",
+        "image": "/images/Tomatoes.jpg",
+        "growthMaterials": {
+            "fertilizer": {
+                "name": "Nitrogen",
+                "image": "/images/Nitrogen.jpg",
+                "price": 28
+            },
+            "additionalMaterials": [
+                {
+                    "name": "Phosphorus",
+                    "image": "/images/Phosphorus.jpg",
+                    "price": 20
+                },
+                {
+                    "name": "Potassium",
+                    "image": "/images/Potassium.jpg",
+                    "price": 25
+                }
+            ]
+        }
+      },
+      {
+        "id": 15,
+        "name": "Onions",
+        "price": 30,
+        "category": "Vegetables",
+        "image": "/images/Onions.jpg",
+        "growthMaterials": {
+            "fertilizer": {
+                "name": "Nitrogen",
+                "image": "/images/Nitrogen.jpg",
+                "price": 28
+            },
+            "additionalMaterials": [
+                {
+                    "name": "Phosphorus",
+                    "image": "/images/Phosphorus.jpg",
+                    "price": 20
+                },
+                {
+                    "name": "Potassium",
+                    "image": "/images/Potassium.jpg",
+                    "price": 25
+                }
+            ]
+        }
+      },
+      {
+        "id": 16,
+        "name": "Garlic",
+        "price": 60,
+        "category": "Vegetables",
+        "image": "/images/Garlic.jpg",
+        "growthMaterials": {
+            "fertilizer": {
+                "name": "Nitrogen",
+                "image": "/images/Nitrogen.jpg",
+                "price": 28
+            },
+            "additionalMaterials": [
+                {
+                    "name": "Phosphorus",
+                    "image": "/images/Phosphorus.jpg",
+                    "price": 20
+                },
+                {
+                    "name": "Potassium",
+                    "image": "/images/Potassium.jpg",
+                    "price": 25
+                }
+            ]
+        }
+      },
+      {
+        "id": 17,
+        "name": "Spinach",
+        "price": 25,
+        "category": "Vegetables",
+        "image": "/images/Spinach.jpg",
+        "growthMaterials": {
+            "fertilizer": {
+                "name": "Nitrogen",
+                "image": "/images/Nitrogen.jpg",
+                "price": 28
+            },
+            "additionalMaterials": [
+                {
+                    "name": "Phosphorus",
+                    "image": "/images/Phosphorus.jpg",
+                    "price": 20
+                },
+                {
+                    "name": "Potassium",
+                    "image": "/images/Potassium.jpg",
+                    "price": 25
+                }
+            ]
+        }
+      },
+      {
+        "id": 18,
+        "name": "Cauliflower",
+        "price": 35,
+        "category": "Vegetables",
+        "image": "/images/Cauliflower.jpg",
+        "growthMaterials": {
+            "fertilizer": {
+                "name": "Nitrogen",
+                "image": "/images/Nitrogen.jpg",
+                "price": 28
+            },
+            "additionalMaterials": [
+                {
+                    "name": "Phosphorus",
+                    "image": "/images/Phosphorus.jpg",
+                    "price": 20
+                },
+                {
+                    "name": "Potassium",
+                    "image": "/images/Potassium.jpg",
+                    "price": 25
+                }
+            ]
+        }
+      },
+      {
+        "id": 19,
+        "name": "Cabbage",
+        "price": 20,
+        "category": "Vegetables",
+        "image": "/images/Cabbage.jpg",
+        "growthMaterials": {
+            "fertilizer": {
+                "name": "Nitrogen",
+                "image": "/images/Nitrogen.jpg",
+                "price": 28
+            },
+            "additionalMaterials": [
+                {
+                    "name": "Phosphorus",
+                    "image": "/images/Phosphorus.jpg",
+                    "price": 20
+                },
+                {
+                    "name": "Potassium",
+                    "image": "/images/Potassium.jpg",
+                    "price": 25
+                }
+            ]
+        }
+      },
+      {
+        "id": 20,
+        "name": "Carrots",
+        "price": 25,
+        "category": "Vegetables",
+        "image": "https://i.pinimg.com/236x/8c/b2/81/8cb281918502598f4f6dbf02d62893c7.jpg",
+        "growthMaterials": {
+            "fertilizer": {
+                "name": "Potassium",
+                "image": "/images/Potassium.jpg",
+                "price": 25
+            },
+            "additionalMaterials": [
+                {
+                    "name": "Phosphorus",
+                    "image": "/images/Phosphorus.jpg",
+                    "price": 20
+                },
+                {
+                    "name": "Nitrogen",
+                    "image": "/images/Nitrogen.jpg",
+                    "price": 28
+                }
+            ]
+        }
+      },
+      {
+        "id": 21,
+        "name": "Peas",
+        "price": 30,
+        "category": "Vegetables",
+        "image": "https://i.pinimg.com/236x/5d/a0/89/5da089cb025f78584ca7bc5d0cb38820.jpg",
+        "growthMaterials": {
+            "fertilizer": {
+                "name": "Potassium",
+                "image": "/images/Potassium.jpg",
+                "price": 25
+            },
+            "additionalMaterials": [
+                {
+                    "name": "Phosphorus",
+                    "image": "/images/Phosphorus.jpg",
+                    "price": 20
+                },
+                {
+                    "name": "Nitrogen",
+                    "image": "/images/Nitrogen.jpg",
+                    "price": 28
+                }
+            ]
+        }
+      },
+      {
+        "id": 22,
+        "name": "Okra (bhindi)",
+        "price": 40,
+        "category": "Vegetables",
+        "image": "https://i.pinimg.com/236x/cf/89/63/cf89639c4400eafeb17bfc69b57420d7.jpg",
+        "growthMaterials": {
+            "fertilizer": {
+                "name": "Potassium",
+                "image": "/images/Potassium.jpg",
+                "price": 25
+            },
+            "additionalMaterials": [
+                {
+                    "name": "Nitrogen",
+                    "image": "/images/Nitrogen.jpg",
+                    "price": 28
+                }
+            ]
+        }
+      },
+      {
+        "id": 23,
+        "name": "Eggplants (brinjal)",
+        "price": 35,
+        "category": "Vegetables",
+        "image": "https://i.pinimg.com/236x/af/a6/6f/afa66fb45af176d0ec13a3b7314f83c4.jpg",
+        "growthMaterials": {
+            "fertilizer": {
+                "name": "Phosphorus",
+                "image": "/images/Phosphorus.jpg",
+                "price": 20
+            },
+            "additionalMaterials": [
+                {
+                    "name": "Potassium",
+                    "image": "/images/Potassium.jpg",
+                    "price": 25
+                }
+            ]
+        }
+      },
+      {
+        "id": 24,
+        "name": "Cucumbers",
+        "price": 20,
+        "category": "Vegetables",
+        "image": "https://i.pinimg.com/736x/a7/d6/0c/a7d60c8d7949628c5532c328c9199c06.jpg",
+        "growthMaterials": {
+            "fertilizer": {
+                "name": "Nitrogen",
+                "image": "/images/Nitrogen.jpg",
+                "price": 28
+            },
+            "additionalMaterials": [
+                {
+                    "name": "Phosphorus",
+                    "image": "/images/Phosphorus.jpg",
+                    "price": 20
+                }
+            ]
+        }
+      },
+      {
+        "id": 25,
+        "name": "Bell peppers",
+        "price": 45,
+        "category": "Vegetables",
+        "image": "/images/Bell peppers seeds.jpg",
+        "growthMaterials": {
+            "fertilizer": {
+                "name": "Potassium",
+                "image": "/images/Potassium.jpg",
+                "price": 25
+            },
+            "additionalMaterials": [
+                {
+                    "name": "Phosphorus",
+                    "image": "/images/Phosphorus.jpg",
+                    "price": 20
+                }
+            ]
+        }
+      },
+      {
+        "id": 26,
+        "name": "Lettuce",
+        "price": 25,
+        "category": "Vegetables",
+        "image": "/images/Lettuce.jpg",
+        "growthMaterials": {
+            "fertilizer": {
+                "name": "Nitrogen",
+                "image": "/images/Nitrogen.jpg",
+                "price": 28
+            },
+            "additionalMaterials": [
+                {
+                    "name": "Potassium",
+                    "image": "/images/Potassium.jpg",
+                    "price": 25
+                }
+            ]
+        }
+      },
+      {
+        "id": 27,
+        "name": "Radishes",
+        "price": 20,
+        "category": "Vegetables",
+        "image": "/images/Radishes.jpg",
+        "growthMaterials": {
+            "fertilizer": {
+                "name": "Phosphorus",
+                "image": "/images/Phosphorus.jpg",
+                "price": 20
+            },
+            "additionalMaterials": [
+                {
+                    "name": "Potassium",
+                    "image": "/images/Potassium.jpg",
+                    "price": 25
+                }
+            ]
+        }
+      },
+      {
+        "id": 28,
+        "name": "Pumpkins",
+        "price": 50,
+        "category": "Vegetables",
+        "image": "/images/Pumpkins.jpg",
+        "growthMaterials": {
+            "fertilizer": {
+                "name": "Nitrogen",
+                "image": "/images/Nitrogen.jpg",
+                "price": 28
+            },
+            "additionalMaterials": [
+                {
+                    "name": "Phosphorus",
+                    "image": "/images/Phosphorus.jpg",
+                    "price": 20
+                },
+                {
+                    "name": "Potassium",
+                    "image": "/images/Potassium.jpg",
+                    "price": 25
+                }
+            ]
+        }
+      },
+      {
+        "id": 29,
+        "name": "Mango",
+        "price": 60,
+        "category": "Fruits",
+        "image": "/images/Mangoes.jpg",
+        "growthMaterials": {
+            "fertilizer": {
+                "name": "Potassium",
+                "image": "/images/Potassium.jpg",
+                "price": 25
+            },
+            "additionalMaterials": [
+                {
+                    "name": "Phosphorus",
+                    "image": "/images/Phosphorus.jpg",
+                    "price": 20
+                }
+            ]
+        }
+      },
+      {
+        "id": 30,
+        "name": "Orange",
+        "price": 30,
+        "category": "Fruits",
+        "image": "/images/Oranges.jpg",
+        "growthMaterials": {
+            "fertilizer": {
+                "name": "Nitrogen",
+                "image": "/images/Nitrogen.jpg",
+                "price": 28
+            },
+            "additionalMaterials": [
+                {
+                    "name": "Phosphorus",
+                    "image": "/images/Phosphorus.jpg",
+                    "price": 20
+                }
+            ]
+        }
+      },
+      {
+        "id": 31,
+        "name": "Banana",
+        "price": 20,
+        "category": "Fruits",
+        "image": "/images/Bananas.jpeg",
+        "growthMaterials": {
+            "fertilizer": {
+                "name": "Potassium",
+                "image": "/images/Potassium.jpg",
+                "price": 25
+            },
+            "additionalMaterials": [
+                {
+                    "name": "Nitrogen",
+                    "image": "/images/Nitrogen.jpg",
+                    "price": 28
+                }
+            ]
+        }
+      },
+      {
+        "id": 32,
+        "name": "Apple",
+        "price": 50,
+        "category": "Fruits",
+        "image": "/images/Apples.jpg",
+        "growthMaterials": {
+            "fertilizer": {
+                "name": "Phosphorus",
+                "image": "/images/Phosphorus.jpg",
+                "price": 20
+            },
+            "additionalMaterials": [
+                {
+                    "name": "Potassium",
+                    "image": "/images/Potassium.jpg",
+                    "price": 25
+                }
+            ]
+        }
+      },
+      {
+        "id": 33,
+        "name": "Grapes",
+        "price": 40,
+        "category": "Fruits",
+        "image": "/images/Grapes.jpg",
+        "growthMaterials": {
+            "fertilizer": {
+                "name": "Phosphorus",
+                "image": "/images/Phosphorus.jpg",
+                "price": 20
+            },
+            "additionalMaterials": [
+                {
+                    "name": "Potassium",
+                    "image": "/images/Potassium.jpg",
+                    "price": 25
+                }
+            ]
+        }
+      },
+      {
+        "id": 34,
+        "name": "Pomegranate",
+        "price": 70,
+        "category": "Fruits",
+        "image": "/images/Pomegranates.jpg",
+        "growthMaterials": {
+            "fertilizer": {
+                "name": "Nitrogen",
+                "image": "/images/Nitrogen.jpg",
+                "price": 28
+            },
+            "additionalMaterials": [
+                {
+                    "name": "Potassium",
+                    "image": "/images/Potassium.jpg",
+                    "price": 25
+                },
+                {
+                    "name": "Phosphorus",
+                    "image": "/images/Phosphorus.jpg",
+                    "price": 20
+                }
+            ]
+        }
+      },
+      {
+        "id": 35,
+        "name": "Guavas",
+        "price": 25,
+        "category": "Fruits",
+        "image": "/images/Guavas.jpg",
+        "growthMaterials": {
+            "fertilizer": {
+                "name": "Nitrogen",
+                "image": "/images/Nitrogen.jpg",
+                "price": 28
+            },
+            "additionalMaterials": [
+                {
+                    "name": "Potassium",
+                    "image": "/images/Potassium.jpg",
+                    "price": 25
+                }
+            ]
+        }
+      },
+      {
+        "id": 36,
+        "name": "Lemons",
+        "price": 15,
+        "category": "Fruits",
+        "image": "/images/Lemons.jpg",
+        "growthMaterials": {
+            "fertilizer": {
+                "name": "Potassium",
+                "image": "/images/Potassium.jpg",
+                "price": 25
+            },
+            "additionalMaterials": [
+                {
+                    "name": "Phosphorus",
+                    "image": "/images/Phosphorus.jpg",
+                    "price": 20
+                }
+            ]
+        }
+      },
+      {
+        "id": 37,
+        "name": "Peaches",
+        "price": 45,
+        "category": "Fruits",
+        "image": "/images/Peaches.jpg",
+        "growthMaterials": {
+            "fertilizer": {
+                "name": "Phosphorus",
+                "image": "/images/Phosphorus.jpg",
+                "price": 20
+            },
+            "additionalMaterials": [
+                {
+                    "name": "Potassium",
+                    "image": "/images/Potassium.jpg",
+                    "price": 25
+                }
+            ]
+        }
+      },
+      {
+        "id": 38,
+        "name": "Plums",
+        "price": 35,
+        "category": "Fruits",
+        "image": "/images/Plums.jpg",
+        "growthMaterials": {
+            "fertilizer": {
+                "name": "Potassium",
+                "image": "/images/Potassium.jpg",
+                "price": 25
+            },
+            "additionalMaterials": [
+                {
+                    "name": "Phosphorus",
+                    "image": "/images/Phosphorus.jpg",
+                    "price": 20
+                }
+            ]
+        }
+      },
+      {
+        "id": 39,
+        "name": "Apricots",
+        "price": 40,
+        "category": "Fruits",
+        "image": "/images/Apricots.jpg",
+        "growthMaterials": {
+            "fertilizer": {
+                "name": "Nitrogen",
+                "image": "/images/Nitrogen.jpg",
+                "price": 28
+            },
+            "additionalMaterials": [
+                {
+                    "name": "Potassium",
+                    "image": "/images/Potassium.jpg",
+                    "price": 25
+                }
+            ]
+        }
+      },
+      {
+        "id": 40,
+        "name": "Figs",
+        "price": 55,
+        "category": "Fruits",
+        "image": "/images/Figs.jpg",
+        "growthMaterials": {
+            "fertilizer": {
+                "name": "Phosphorus",
+                "image": "/images/Phosphorus.jpg",
+                "price": 20
+            },
+            "additionalMaterials": [
+                {
+                    "name": "Nitrogen",
+                    "image": "/images/Nitrogen.jpg",
+                    "price": 28
+                }
+            ]
+        }
+      },
+      {
+        "id": 41,
+        "name": "Cherries",
+        "price": 65,
+        "category": "Fruits",
+        "image": "/images/Cherries.jpg",
+        "growthMaterials": {
+            "fertilizer": {
+                "name": "Potassium",
+                "image": "/images/Potassium.jpg",
+                "price": 25
+            },
+            "additionalMaterials": [
+                {
+                    "name": "Phosphorus",
+                    "image": "/images/Phosphorus.jpg",
+                    "price": 20
+                },
+                {
+                    "name": "Nitrogen",
+                    "image": "/images/Nitrogen.jpg",
+                    "price": 28
+                }
+            ]
+        }
+      },
+      {
+        "id": 42,
+        "name": "Mulberries",
+        "price": 50,
+        "category": "Fruits",
+        "image": "/images/Mulberries.jpg",
+        "growthMaterials": {
+            "fertilizer": {
+                "name": "Potassium",
+                "image": "/images/Potassium.jpg",
+                "price": 25
+            },
+            "additionalMaterials": [
+                {
+                    "name": "Phosphorus",
+                    "image": "/images/Phosphorus.jpg",
+                    "price": 20
+                },
+                {
+                    "name": "Nitrogen",
+                    "image": "/images/Nitrogen.jpg",
+                    "price": 28
+                }
+            ]
+        }
+      },
+      {
+        "id": 43,
+        "name": "Walnuts",
+        "price": 100,
+        "category": "Nuts",
+        "image": "/images/Walnuts.jpg",
+        "growthMaterials": {
+            "fertilizer": {
+                "name": "Potassium",
+                "image": "/images/Potassium.jpg",
+                "price": 25
+            },
+            "additionalMaterials": [
+                {
+                    "name": "Phosphorus",
+                    "image": "/images/Phosphorus.jpg",
+                    "price": 20
+                },
+                {
+                    "name": "Nitrogen",
+                    "image": "/images/Nitrogen.jpg",
+                    "price": 28
+                }
+            ]
+        }
+      },
+      {
+        "id": 44,
+        "name": "Almonds",
+        "price": 120,
+        "category": "Nuts",
+        "image": "/images/Almonds.jpg",
+        "growthMaterials": {
+            "fertilizer": {
+                "name": "Potassium",
+                "image": "/images/Potassium.jpg",
+                "price": 25
+            },
+            "additionalMaterials": [
+                {
+                    "name": "Phosphorus",
+                    "image": "/images/Phosphorus.jpg",
+                    "price": 20
+                },
+                {
+                    "name": "Nitrogen",
+                    "image": "/images/Nitrogen.jpg",
+                    "price": 28
+                }
+            ]
+        }
+      },
+      {
+        "id": 45,
+        "name": "Pistachios",
+        "price": 150,
+        "category": "Nuts",
+        "image": "/images/Pistachios.jpg",
+        "growthMaterials": {
+            "fertilizer": {
+                "name": "Potassium",
+                "image": "/images/Potassium.jpg",
+                "price": 25
+            },
+            "additionalMaterials": [
+                {
+                    "name": "Phosphorus",
+                    "image": "/images/Phosphorus.jpg",
+                    "price": 20
+                },
+                {
+                    "name": "Nitrogen",
+                    "image": "/images/Nitrogen.jpg",
+                    "price": 28
+                }
+            ]
+        }
+      },
+      {
+        "id": 46,
+        "name": "Mustard",
+        "price": 25,
+        "category": "Oilseeds",
+        "image": "/images/Mustard.jpg",
+        "growthMaterials": {
+            "fertilizer": {
+                "name": "Potassium",
+                "image": "/images/Potassium.jpg",
+                "price": 25
+            },
+            "additionalMaterials": [
+                {
+                    "name": "Phosphorus",
+                    "image": "/images/Phosphorus.jpg",
+                    "price": 20
+                },
+                {
+                    "name": "Nitrogen",
+                    "image": "/images/Nitrogen.jpg",
+                    "price": 28
+                }
+            ]
+        }
+      },
+      {
+        "id": 47,
+        "name": "Sesame",
+        "price": 30,
+        "category": "Oilseeds",
+        "image": "/images/Sesame.jpg",
+        "growthMaterials": {
+            "fertilizer": {
+                "name": "Potassium",
+                "image": "/images/Potassium.jpg",
+                "price": 25
+            },
+            "additionalMaterials": [
+                {
+                    "name": "Phosphorus",
+                    "image": "/images/Phosphorus.jpg",
+                    "price": 20
+                },
+                {
+                    "name": "Nitrogen",
+                    "image": "/images/Nitrogen.jpg",
+                    "price": 28
+                }
+            ]
+        }
+      },
+      {
+        "id": 48,
+        "name": "Sunflower",
+        "price": 35,
+        "category": "Oilseeds",
+        "image": "/images/Sunflower.jpg",
+        "growthMaterials": {
+            "fertilizer": {
+                "name": "Potassium",
+                "image": "/images/Potassium.jpg",
+                "price": 25
+            },
+            "additionalMaterials": [
+                {
+                    "name": "Phosphorus",
+                    "image": "/images/Phosphorus.jpg",
+                    "price": 20
+                },
+                {
+                    "name": "Nitrogen",
+                    "image": "/images/Nitrogen.jpg",
+                    "price": 28
+                }
+            ]
+        }
+      },
+      {
+        "id": 49,
+        "name": "Canola",
+        "price": 40,
+        "category": "Oilseeds",
+        "image": "/images/Canola.jpg",
+        "growthMaterials": {
+            "fertilizer": {
+                "name": "Potassium",
+                "image": "/images/Potassium.jpg",
+                "price": 25
+            },
+            "additionalMaterials": [
+                {
+                    "name": "Phosphorus",
+                    "image": "/images/Phosphorus.jpg",
+                    "price": 20
+                },
+                {
+                    "name": "Nitrogen",
+                    "image": "/images/Nitrogen.jpg",
+                    "price": 28
+                }
+            ]
+        }
+      },
+      {
+        "id": 51,
+        "name": "Mint",
+        "price": 15,
+        "category": "Spices and Herbs",
+        "image": "/images/Mint.jpg",
+        "growthMaterials": {
+            "fertilizer": {
+                "name": "Potassium",
+                "image": "/images/Potassium.jpg",
+                "price": 25
+            },
+            "additionalMaterials": [
+                {
+                    "name": "Phosphorus",
+                    "image": "/images/Phosphorus.jpg",
+                    "price": 20
+                },
+                {
+                    "name": "Nitrogen",
+                    "image": "/images/Nitrogen.jpg",
+                    "price": 28
+                }
+            ]
+        }
+      },
+      {
+        "id": 52,
+        "name": "Fenugreek",
+        "price": 25,
+        "category": "Spices and Herbs",
+        "image": "/images/Fenugreek.jpg",
+        "growthMaterials": {
+            "fertilizer": {
+                "name": "Potassium",
+                "image": "/images/Potassium.jpg",
+                "price": 25
+            },
+            "additionalMaterials": [
+                {
+                    "name": "Phosphorus",
+                    "image": "/images/Phosphorus.jpg",
+                    "price": 20
+                },
+                {
+                    "name": "Nitrogen",
+                    "image": "/images/Nitrogen.jpg",
+                    "price": 28
+                }
+            ]
+        }
+      },
+      {
+        "id": 53,
+        "name": "Cumin",
+        "price": 35,
+        "category": "Spices and Herbs",
+        "image": "/images/Cumin.jpg",
+        "growthMaterials": {
+            "fertilizer": {
+                "name": "Potassium",
+                "image": "/images/Potassium.jpg",
+                "price": 25
+            },
+            "additionalMaterials": [
+                {
+                    "name": "Phosphorus",
+                    "image": "/images/Phosphorus.jpg",
+                    "price": 20
+                },
+                {
+                    "name": "Nitrogen",
+                    "image": "/images/Nitrogen.jpg",
+                    "price": 28
+                }
+            ]
+        }
+      },
+      {
+        "id": 54,
+        "name": "Turmeric",
+        "price": 40,
+        "category": "Spices and Herbs",
+        "image": "/images/Turmeric.jpg",
+        "growthMaterials": {
+            "fertilizer": {
+                "name": "Potassium",
+                "image": "/images/Potassium.jpg",
+                "price": 25
+            },
+            "additionalMaterials": [
+                {
+                    "name": "Phosphorus",
+                    "image": "/images/Phosphorus.jpg",
+                    "price": 20
+                },
+                {
+                    "name": "Nitrogen",
+                    "image": "/images/Nitrogen.jpg",
+                    "price": 28
+                }
+            ]
+        }
+      },
+      {
+        "id": 55,
+        "name": "Red chili",
+        "price": 45,
+        "category": "Spices and Herbs",
+        "image": "/images/Red chili.jpg",
+        "growthMaterials": {
+            "fertilizer": {
+                "name": "Potassium",
+                "image": "/images/Potassium.jpg",
+                "price": 25
+            },
+            "additionalMaterials": [
+                {
+                    "name": "Phosphorus",
+                    "image": "/images/Phosphorus.jpg",
+                    "price": 20
+                },
+                {
+                    "name": "Nitrogen",
+                    "image": "/images/Nitrogen.jpg",
+                    "price": 28
+                }
+            ]
+        }
+      },
+      {
+        "id": 56,
+        "name": "Black pepper",
+        "price": 50,
+        "category": "Spices and Herbs",
+        "image": "/images/Black_pepper.jpg",
+        "growthMaterials": {
+            "fertilizer": {
+                "name": "Potassium",
+                "image": "/images/Potassium.jpg",
+                "price": 25
+            },
+            "additionalMaterials": [
+                {
+                    "name": "Phosphorus",
+                    "image": "/images/Phosphorus.jpg",
+                    "price": 20
+                },
+                {
+                    "name": "Nitrogen",
+                    "image": "/images/Nitrogen.jpg",
+                    "price": 28
+                }
+            ]
+        }
+      },
+      {
+        "id": 57,
+        "name": "Cotton",
+        "price": 60,
+        "category": "Other Cash Crops",
+        "image": "/images/Cotton.jpg",
+        "growthMaterials": {
+            "fertilizer": {
+                "name": "Potassium",
+                "image": "/images/Potassium.jpg",
+                "price": 25
+            },
+            "additionalMaterials": [
+                {
+                    "name": "Phosphorus",
+                    "image": "/images/Phosphorus.jpg",
+                    "price": 20
+                },
+                {
+                    "name": "Nitrogen",
+                    "image": "/images/Nitrogen.jpg",
+                    "price": 28
+                }
+            ]
+        }
+      },
+      {
+        "id": 58,
+        "name": "Sugarcane",
+        "price": 25,
+        "category": "Other Cash Crops",
+        "image": "/images/Sugarcane.jpg",
+        "growthMaterials": {
+            "fertilizer": {
+                "name": "Potassium",
+                "image": "/images/Potassium.jpg",
+                "price": 25
+            },
+            "additionalMaterials": [
+                {
+                    "name": "Phosphorus",
+                    "image": "/images/Phosphorus.jpg",
+                    "price": 20
+                },
+                {
+                    "name": "Nitrogen",
+                    "image": "/images/Nitrogen.jpg",
+                    "price": 28
+                }
+            ]
+        }
+      },
+      {
+        "id": 59,
+        "name": "Tobacco",
+        "price": 70,
+        "category": "Other Cash Crops",
+        "image": "/images/Tobacco.jpg",
+        "growthMaterials": {
+            "fertilizer": {
+                "name": "Potassium",
+                "image": "/images/Potassium.jpg",
+                "price": 25
+            },
+            "additionalMaterials": [
+                {
+                    "name": "Phosphorus",
+                    "image": "/images/Phosphorus.jpg",
+                    "price": 20
+                },
+                {
+                    "name": "Nitrogen",
+                    "image": "/images/Nitrogen.jpg",
+                    "price": 28
+                }
+            ]
+        }
+      },
+      {
+        "id": 60,
+        "name": "Alfalfa",
+        "price": 20,
+        "category": "Forage Crops",
+        "image": "/images/Alfalfa.jpg",
+        "growthMaterials": {
+            "fertilizer": {
+                "name": "Potassium",
+                "image": "/images/Potassium.jpg",
+                "price": 25
+            },
+            "additionalMaterials": [
+                {
+                    "name": "Phosphorus",
+                    "image": "/images/Phosphorus.jpg",
+                    "price": 20
+                },
+                {
+                    "name": "Nitrogen",
+                    "image": "/images/Nitrogen.jpg",
+                    "price": 28
+                }
+            ]
+        }
+      },
+      {
+        "id": 61,
+        "name": "Clover",
+        "price": 25,
+        "category": "Forage Crops",
+        "image": "/images/Clover.jpg",
+        "growthMaterials": {
+            "fertilizer": {
+                "name": "Potassium",
+                "image": "/images/Potassium.jpg",
+                "price": 25
+            },
+            "additionalMaterials": [
+                {
+                    "name": "Phosphorus",
+                    "image": "/images/Phosphorus.jpg",
+                    "price": 20
+                },
+                {
+                    "name": "Nitrogen",
+                    "image": "/images/Nitrogen.jpg",
+                    "price": 28
+                }
+            ]
+        }
+      },
+      {
+        "id": 62,
+        "name": "Sorghum-sudan grass",
+        "price": 30,
+        "category": "Forage Crops",
+        "image": "/images/Sorghum_sudan_grass.jpg",
+        "growthMaterials": {
+            "fertilizer": {
+                "name": "Potassium",
+                "image": "/images/Potassium.jpg",
+                "price": 25
+            },
+            "additionalMaterials": [
+                {
+                    "name": "Phosphorus",
+                    "image": "/images/Phosphorus.jpg",
+                    "price": 20
+                },
+                {
+                    "name": "Nitrogen",
+                    "image": "/images/Nitrogen.jpg",
+                    "price": 28
+                }
+            ]
+        }
+      },
+      {
+        "id": 63,
+        "name": "Roses",
+        "price": 35,
+        "category": "Ornamental Plants",
+        "image": "/images/Roses.jpg",
+        "growthMaterials": {
+            "fertilizer": {
+                "name": "Potassium",
+                "image": "/images/Potassium.jpg",
+                "price": 25
+            },
+            "additionalMaterials": [
+                {
+                    "name": "Phosphorus",
+                    "image": "/images/Phosphorus.jpg",
+                    "price": 20
+                },
+                {
+                    "name": "Nitrogen",
+                    "image": "/images/Nitrogen.jpg",
+                    "price": 28
+                }
+            ]
+        }
+      },
+      {
+        "id": 64,
+        "name": "Jasmine",
+        "price": 40,
+        "category": "Ornamental Plants",
+        "image": "/images/Jasmine.jpg",
+        "growthMaterials": {
+            "fertilizer": {
+                "name": "Potassium",
+                "image": "/images/Potassium.jpg",
+                "price": 25
+            },
+            "additionalMaterials": [
+                {
+                    "name": "Phosphorus",
+                    "image": "/images/Phosphorus.jpg",
+                    "price": 20
+                },
+                {
+                    "name": "Nitrogen",
+                    "image": "/images/Nitrogen.jpg",
+                    "price": 28
+                }
+            ]
+        }
+      },
+      {
+        "id": 65,
+        "name": "Marigold",
+        "price": 20,
+        "category": "Ornamental Plants",
+        "image": "/images/Marigold.jpg",
+        "growthMaterials": {
+            "fertilizer": {
+                "name": "Potassium",
+                "image": "/images/Potassium.jpg",
+                "price": 25
+            },
+            "additionalMaterials": [
+                {
+                    "name": "Phosphorus",
+                    "image": "/images/Phosphorus.jpg",
+                    "price": 20
+                },
+                {
+                    "name": "Nitrogen",
+                    "image": "/images/Nitrogen.jpg",
+                    "price": 28
+                }
+            ]
+        }
+      },
+      {
+        "id": 66,
+        "name": "Chrysanthemums",
+        "price": 30,
+        "category": "Ornamental Plants",
+        "image": "/images/Chrysanthemums.jpg",
+        "growthMaterials": {
+            "fertilizer": {
+                "name": "Potassium",
+                "image": "/images/Potassium.jpg",
+                "price": 25
+            },
+            "additionalMaterials": [
+                {
+                    "name": "Phosphorus",
+                    "image": "/images/Phosphorus.jpg",
+                    "price": 20
+                },
+                {
+                    "name": "Nitrogen",
+                    "image": "/images/Nitrogen.jpg",
+                    "price": 28
+                }
+            ]
+        }
+      },
+      {
+        "id": 67,
+        "name": "Aloe vera",
+        "price": 25,
+        "category": "Medicinal Plants",
+        "image": "/images/Aloe_vera.jpg",
+        "growthMaterials": {
+            "fertilizer": {
+                "name": "Potassium",
+                "image": "/images/Potassium.jpg",
+                "price": 25
+            },
+            "additionalMaterials": [
+                {
+                    "name": "Phosphorus",
+                    "image": "/images/Phosphorus.jpg",
+                    "price": 20
+                },
+                {
+                    "name": "Nitrogen",
+                    "image": "/images/Nitrogen.jpg",
+                    "price": 28
+                }
+            ]
+        }
+      },
+      {
+        "id": 68,
+        "name": "Tulsi",
+        "price": 20,
+        "category": "Medicinal Plants",
+        "image": "/images/Tulsi.jpg",
+        "growthMaterials": {
+            "fertilizer": {
+                "name": "Potassium",
+                "image": "/images/Potassium.jpg",
+                "price": 25
+            },
+            "additionalMaterials": [
+                {
+                    "name": "Phosphorus",
+                    "image": "/images/Phosphorus.jpg",
+                    "price": 20
+                },
+                {
+                    "name": "Nitrogen",
+                    "image": "/images/Nitrogen.jpg",
+                    "price": 28
+                }
+            ]
+        }
+      },
+      {
+        "id": 69,
+        "name": "Tea",
+        "price": 15,
+        "category": "Other",
+        "image": "/images/Tea.jpg",
+        "growthMaterials": {
+            "fertilizer": {
+                "name": "Potassium",
+                "image": "/images/Potassium.jpg",
+                "price": 25
+            },
+            "additionalMaterials": [
+                {
+                    "name": "Phosphorus",
+                    "image": "/images/Phosphorus.jpg",
+                    "price": 20
+                },
+                {
+                    "name": "Nitrogen",
+                    "image": "/images/Nitrogen.jpg",
+                    "price": 28
+                }
+            ]
+        }
+      },
+      {
+        "id": 70,
+        "name": "Coffee",
+        "price": 20,
+        "category": "Other",
+        "image": "/images/Coffee.jpg",
+        "growthMaterials": {
+            "fertilizer": {
+                "name": "Potassium",
+                "image": "/images/Potassium.jpg",
+                "price": 25
+            },
+            "additionalMaterials": [
+                {
+                    "name": "Phosphorus",
+                    "image": "/images/Phosphorus.jpg",
+                    "price": 20
+                },
+                {
+                    "name": "Nitrogen",
+                    "image": "/images/Nitrogen.jpg",
+                    "price": 28
+                }
+            ]
+        }
+      },
+      {
+        "id": 71,
+        "name": "Jute",
+        "price": 95,
+        "category": "Fibers",
+        "image": "/images/Jute.jpg",
+        "growthMaterials": {
+          "fertilizer": {
+            "name": "Phosphorus",
+            "image": "https://i.pinimg.com/736x/f5/cb/ed/f5cbedea078fdd7c049bad0d50dde356.jpg",
+            "price": 30
+          },
+          "additionalMaterials": [
+            {
+              "name": "Potassium",
+              "image": "/images/Potassium.jpg",
+              "price": 25
+            },
+            {
+              "name": "Sulfur",
+              "image": "/images/Sulfur.jpg",
+              "price": 15
+            }
+          ]
+        }
+      },
+      {
+        "id": 72,
+        "name": "Coconut",
+        "price": 120,
+        "category": "Fruits",
+        "image": "https://i.pinimg.com/736x/c2/c6/33/c2c633e405b6f87a3edd6af76d782986.jpg",
+        "growthMaterials": {
+          "fertilizer": {
+            "name": "Nitrogen-Phosphorus-Potassium (NPK)",
+            "image": "/images/NPK.jpg",
+            "price": 35
+          },
+          "additionalMaterials": [
+            {
+              "name": "Magnesium",
+              "image": "/images/Magnesium.jpg",
+              "price": 20
+            },
+            {
+              "name": "Boron",
+              "image": "/images/Boron.jpg",
+              "price": 10
+            }
+          ]
+        }
+      },
+      {
+        "id": 73,
+        "name": "Papaya",
+        "price": 90,
+        "category": "Fruits",
+        "image": "https://i.pinimg.com/736x/e3/54/8c/e3548cb22eebbde0b2b948c3f30479ae.jpg",
+        "growthMaterials": {
+          "fertilizer": {
+            "name": "Nitrogen-Phosphorus-Potassium (NPK)",
+            "image": "/images/NPK.jpg",
+            "price": 30
+          },
+          "additionalMaterials": [
+            {
+              "name": "Calcium",
+              "image": "/images/Calcium.jpg",
+              "price": 18
+            },
+            {
+              "name": "Magnesium",
+              "image": "/images/Magnesium.jpg",
+              "price": 15
+            }
+          ]
+        }
+      },
+      {
+        "id": 74,
+        "name": "Muskmelon",
+        "price": 85,
+        "category": "Fruits",
+        "image": "https://i.pinimg.com/736x/cc/b4/76/ccb4768d3c600f581f312d1a5fc9fd83.jpg",
+        "growthMaterials": {
+          "fertilizer": {
+            "name": "Nitrogen-Phosphorus-Potassium (NPK)",
+            "image": "/images/NPK.jpg",
+            "price": 32
+          },
+          "additionalMaterials": [
+            {
+              "name": "Calcium",
+              "image": "/images/Calcium.jpg",
+              "price": 20
+            },
+            {
+              "name": "Sulfur",
+              "image": "/images/Sulfur.jpg",
+              "price": 12
+            }
+          ]
+        }
+      },
+      {
+        "id": 75,
+        "name": "Watermelon",
+        "price": 75,
+        "category": "Fruits",
+        "image": "https://i.pinimg.com/736x/1f/62/10/1f62105543ffb6e7ae506caab557972c.jpg",
+        "growthMaterials": {
+          "fertilizer": {
+            "name": "Nitrogen-Phosphorus-Potassium (NPK)",
+            "image": "/images/NPK.jpg",
+            "price": 30
+          },
+          "additionalMaterials": [
+            {
+              "name": "Magnesium",
+              "image": "/images/Magnesium.jpg",
+              "price": 18
+            },
+            {
+              "name": "Calcium",
+              "image": "/images/Calcium.jpg",
+              "price": 15
+            }
+          ]
+        }
+      },
+      {
+        "id": 76,
+        "name": "Blackgram",
+        "price": 110,
+        "category": "Pulses",
+        "image": "https://i.pinimg.com/736x/b8/51/41/b851418895094c071beb9ce670157a17.jpg",
+        "growthMaterials": {
+          "fertilizer": {
+            "name": "Phosphorus",
+            "image": "/images/Phosphorus.jpg",
+            "price": 28
+          },
+          "additionalMaterials": [
+            {
+              "name": "Potassium",
+              "image": "/images/Potassium.jpg",
+              "price": 22
+            },
+            {
+              "name": "Sulfur",
+              "image": "/images/Sulfur.jpg",
+              "price": 14
+            }
+          ]
+        }
+      },
+      {
+        "id": 78,
+        "name": "Mungbean",
+        "price": 105,
+        "category": "Pulses",
+        "image": "https://i.pinimg.com/736x/f6/2e/3c/f62e3c94bcaece24afc2fdd87e14fac9.jpg",
+        "growthMaterials": {
+          "fertilizer": {
+            "name": "Phosphorus",
+            "image": "/images/Phosphorus.jpg",
+            "price": 26
+          },
+          "additionalMaterials": [
+            {
+              "name": "Potassium",
+              "image": "/images/Potassium.jpg",
+              "price": 20
+            },
+            {
+              "name": "Zinc",
+              "image": "/images/Zinc.jpg",
+              "price": 12
+            }
+          ]
+        }
+      },
+      {
+        "id": 79,
+        "name": "Mothbeans",
+        "price": 95,
+        "category": "Pulses",
+        "image": "https://i.pinimg.com/736x/b5/78/77/b578779ce4b21ff3df725e3b3846774c.jpg",
+        "growthMaterials": {
+          "fertilizer": {
+            "name": "Phosphorus",
+            "image": "/images/Phosphorus.jpg",
+            "price": 24
+          },
+          "additionalMaterials": [
+            {
+              "name": "Potassium",
+              "image": "/images/Potassium.jpg",
+              "price": 18
+            },
+            {
+              "name": "Sulfur",
+              "image": "/images/Sulfur.jpg",
+              "price": 14
+            }
+          ]
+        }
+      },
+      {
+        "id": 80,
+        "name": "Pigeonpeas",
+        "price": 115,
+        "category": "Pulses",
+        "image": "https://i.pinimg.com/736x/d6/6c/91/d66c9155ba8acd2f1842833c42e75df2.jpg",
+        "growthMaterials": {
+          "fertilizer": {
+            "name": "Phosphorus",
+            "image": "/images/Phosphorus.jpg",
+            "price": 30
+          },
+          "additionalMaterials": [
+            {
+              "name": "Potassium",
+              "image": "/images/Potassium.jpg",
+              "price": 22
+            },
+            {
+              "name": "Zinc",
+              "image": "/images/Zinc.jpg",
+              "price": 15
+            }
+          ]
+        }
+      },
+      {
+        "id": 81,
+        "name": "Summer Vegetable Seeds",
+        "price": 150,
+        "category": "Slider",
+        "image": "https://images.unsplash.com/photo-1594282486552-05b4d80fbb9f?auto=format&fit=crop&q=80&w=1200",
+        "growthMaterials": {
+          "fertilizer": {
+            "name": "Nitrogen",
+            "image": "/images/Nitrogen.jpg",
+            "price": 40
+          },
+          "additionalMaterials": [
+            {
+              "name": "Phosphorus",
+              "image": "/images/Phosphorus.jpg",
+              "price": 30
+            },
+            {
+              "name": "Potassium",
+              "image": "/images/Potassium.jpg",
+              "price": 25
+            }
+          ]
+        }
+      },
+      {
+        "id": 82,
+        "name": "Winter Vegetable Seeds",
+        "price": 160,
+        "category": "Slider",
+        "image": "https://images.unsplash.com/photo-1576045057995-568f588f82fb?auto=format&fit=crop&q=80&w=1200",
+        "growthMaterials": {
+          "fertilizer": {
+            "name": "Compost",
+            "image": "/images/Compost.jpg",
+            "price": 35
+          },
+          "additionalMaterials": [
+            {
+              "name": "Bone Meal",
+              "image": "/images/BoneMeal.jpg",
+              "price": 28
+            },
+            {
+              "name": "Magnesium",
+              "image": "/images/Magnesium.jpg",
+              "price": 18
+            }
+          ]
+        }
+      },
+      {
+        "id": 83,
+        "name": "Spring Vegetable Seeds",
+        "price": 145,
+        "category": "Slider",
+        "image": "https://images.unsplash.com/photo-1557844352-761f2565b576?auto=format&fit=crop&q=80&w=1200",
+        "growthMaterials": {
+          "fertilizer": {
+            "name": "Organic Mulch",
+            "image": "/images/OrganicMulch.jpg",
+            "price": 38
+          },
+          "additionalMaterials": [
+            {
+              "name": "Calcium",
+              "image": "/images/Calcium.jpg",
+              "price": 20
+            },
+            {
+              "name": "Sulfur",
+              "image": "/images/Sulfur.jpg",
+              "price": 15
+            }
+          ]
+        }
+      },
+      {
+        "id": 84,
+        "name": "Monsoon Vegetable Seeds",
+        "price": 155,
+        "category": "Slider",
+        "image": "https://images.unsplash.com/photo-1601493700631-2b16ec4b4716?auto=format&fit=crop&q=80&w=1200",
+        "growthMaterials": {
+          "fertilizer": {
+            "name": "Seaweed Extract",
+            "image": "/images/SeaweedExtract.jpg",
+            "price": 42
+          },
+          "additionalMaterials": [
+            {
+              "name": "Iron",
+              "image": "/images/Iron.jpg",
+              "price": 22
+            },
+            {
+              "name": "Zinc",
+              "image": "/images/Zinc.jpg",
+              "price": 17
+            }
+          ]
+        }
+      }  
+      
+]

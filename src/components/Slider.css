@@ -1,0 +1,173 @@
+.slider-container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 0;
+  overflow: hidden;
+}
+
+.slider {
+  position: relative;
+  height: 500px;
+  width: 100%;
+}
+
+.slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.5s ease-in-out;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  display: flex;
+}
+
+.slide-image {
+  width: 40%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.eco-farm-content {
+  width: 60%;
+  padding: 2rem;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: linear-gradient(135deg, #f0f9ff 0%, #ffffff 100%);
+}
+
+.eco-farm-content h1 {
+  font-size: 2.5rem;
+  color: #1a1a1a;
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
+
+.eco-farm-content h3 {
+  font-size: 1.5rem;
+  color: #22c55e;
+  margin-bottom: 1.5rem;
+  font-weight: 500;
+}
+
+.description {
+  margin-bottom: 2rem;
+  max-height: 250px;
+  overflow-y: auto;
+  padding-right: 1rem;
+}
+
+.description::-webkit-scrollbar {
+  width: 6px;
+}
+
+.description::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 3px;
+}
+
+.description::-webkit-scrollbar-thumb {
+  background: #22c55e;
+  border-radius: 3px;
+}
+
+.description p {
+  margin-bottom: 0.75rem;
+  color: #4b5563;
+  line-height: 1.6;
+}
+
+.add-cart-btn {
+  align-self: flex-start;
+  padding: 0.75rem 2rem;
+  background-color: #22c55e;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.add-cart-btn:hover {
+  background-color: #16a34a;
+}
+
+.slider-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 3rem;
+  height: 3rem;
+  background-color: rgba(255, 255, 255, 0.9);
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  color: #1a1a1a;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  z-index: 10;
+}
+
+.slider-btn:hover {
+  background-color: #22c55e;
+  color: white;
+}
+
+.btn-left {
+  left: 1rem;
+}
+
+.btn-right {
+  right: 1rem;
+}
+
+@media (max-width: 768px) {
+  .slider {
+    height: 700px;
+  }
+
+  .slide {
+    flex-direction: column;
+  }
+
+  .slide-image {
+    width: 100%;
+    height: 200px;
+  }
+
+  .eco-farm-content {
+    width: 100%;
+    padding: 1.5rem;
+  }
+
+  .eco-farm-content h1 {
+    font-size: 2rem;
+  }
+
+  .eco-farm-content h3 {
+    font-size: 1.25rem;
+  }
+
+  .description {
+    max-height: 200px;
+  }
+
+  .slider-btn {
+    width: 2.5rem;
+    height: 2.5rem;
+    font-size: 1.25rem;
+  }
+}
