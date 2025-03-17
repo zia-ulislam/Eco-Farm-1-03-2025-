@@ -1,5 +1,6 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 import { CartProvider } from './context/CartContext';
 import { AuthProvider } from './context/AuthContext';
 import Navbar from './components/Navbar';
@@ -17,33 +18,18 @@ import './App.css';
 
 function App() {
   return (
-    <Router>
-      {/* Wrap the entire app with AuthProvider and CartProvider */}
+    <BrowserRouter future={{ v7_startTransition: true, v7_relativeSplatPath: true }}>
       <AuthProvider>
         <CartProvider>
           <div className="app">
-            {/* Navbar */}
             <Navbar />
-            
-            {/* Main Content */}
             <main className="main-content">
               <Routes>
-                {/* Home Page */}
                 <Route path="/" element={<HomePage />} />
-                
-                {/* Authentication Page */}
                 <Route path="/auth" element={<AuthPage />} />
-                
-                {/* Product Page */}
                 <Route path="/products" element={<ProductPage />} />
-                
-                {/* Contact Page */}
                 <Route path="/contact" element={<ContactPage />} />
-                
-                {/* Tutorial Page */}
                 <Route path="/tutorials" element={<TutorialPage />} />
-                
-                {/* Profile Page (Protected Route) */}
                 <Route 
                   path="/profile" 
                   element={
@@ -52,7 +38,6 @@ function App() {
                     </PrivateRoute>
                   } 
                 />
-                {/* Setting (Protected Route) */}
                 <Route 
                   path="/Settings" 
                   element={
@@ -61,8 +46,6 @@ function App() {
                     </PrivateRoute>
                   } 
                 />
-                
-                {/* Checkout Page (Protected Route) */}
                 <Route 
                   path="/checkout" 
                   element={
@@ -73,13 +56,11 @@ function App() {
                 />
               </Routes>
             </main>
-            
-            {/* Footer */}
             <Footer />
           </div>
         </CartProvider>
       </AuthProvider>
-    </Router>
+    </BrowserRouter>
   );
 }
 

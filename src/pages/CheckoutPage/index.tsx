@@ -1,9 +1,13 @@
-import React, { useEffect, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
-import { useCart } from '../../context/CartContext';
-import { useAuth } from '../../context/AuthContext';
-import { Truck, Minus, Plus, Trash2 } from 'lucide-react';
-import './styles.css';
+import React, { useEffect, useState } from "react";
+import { useNavigate, Link } from "react-router-dom";
+import { useCart } from "../../context/CartContext";
+import { useAuth } from "../../context/AuthContext";
+import { Truck, Minus, Plus, Trash2 } from "lucide-react";
+import { db } from "../../firebaseConfig";
+import { logEvent } from "firebase/analytics";
+import { collection, addDoc, serverTimestamp } from "firebase/firestore";
+import { analytics } from "../../firebase";
+import "./styles.css";
 
 interface Product {
   id: string;
@@ -13,49 +17,44 @@ interface Product {
 }
 
 const CheckoutPage = () => {
-  const { cart, removeFromCart, changeQuantity } = useCart();
+  const { cart, removeFromCart, changeQuantity, clearCart } = useCart();
   const { user } = useAuth();
   const navigate = useNavigate();
 
   const [formData, setFormData] = useState({
-    name: user?.name || '',
-    phone: '',
-    location: '',
-    city: '',
-    district: '',
-    postalCode: '',
+    name: user?.name || "",
+    phone: "",
+    location: "",
+    city: "",
+    district: "",
+    postalCode: "",
   });
 
   const [products, setProducts] = useState<Product[]>([]);
+  const [loading, setLoading] = useState(false);
+  const [showPopup, setShowPopup] = useState(false);
 
   useEffect(() => {
-    fetch('/products.json')
-      .then(response => {
-        if (!response.ok) {
-          throw new Error('Network response was not ok');
-        }
-        return response.json();
-      })
-      .then(data => {
+    fetch("/products.json")
+      .then((response) => response.json())
+      .then((data) => {
         const updatedData = data.map((product: Product) => ({
           ...product,
           id: String(product.id),
         }));
         setProducts(updatedData);
       })
-      .catch(error => {
-        console.error('Error loading products:', error);
-      });
+      .catch((error) => console.error("Error loading products:", error));
   }, []);
 
   const calculateTotal = () => {
     return cart.reduce((total, item) => {
-      const product = products.find(p => p.id === item.product_id);
+      const product = products.find((p) => p.id === item.product_id);
       return total + (product ? product.price * item.quantity : 0);
     }, 0);
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
     if (
@@ -66,20 +65,74 @@ const CheckoutPage = () => {
       !formData.district ||
       !formData.postalCode
     ) {
-      alert('Please fill out all fields.');
+      alert("Please fill out all fields.");
       return;
     }
 
-    console.log('Order submitted:', { formData, cart });
-    navigate('/');
+    if (cart.length === 0) {
+      alert("Your cart is empty.");
+      return;
+    }
+
+    setLoading(true);
+
+    try {
+      const orderData = {
+        userId: user?.uid || "guest",
+        userName: formData.name,
+        phone: formData.phone,
+        address: {
+          location: formData.location,
+          city: formData.city,
+          district: formData.district,
+          postalCode: formData.postalCode,
+        },
+        items: cart.map((item) => ({
+          productId: item.product_id,
+          name:
+            products.find((p) => p.id === item.product_id)?.name || "Unknown",
+          price: products.find((p) => p.id === item.product_id)?.price || 0,
+          quantity: item.quantity,
+        })),
+        totalAmount: calculateTotal(),
+        status: "Pending",
+        createdAt: serverTimestamp(),
+      };
+
+      await addDoc(collection(db, "orders"), orderData);
+
+      logEvent(analytics, "order_placed", {
+        userId: user?.uid || "guest",
+        totalAmount: calculateTotal(),
+        itemCount: cart.length,
+      });
+
+      setShowPopup(true);
+    } catch (error) {
+      console.error("Error placing order:", error);
+
+      logEvent(analytics, "order_placement_failure", {
+        errorMessage: error.message,
+      });
+
+      alert("Something went wrong. Please try again.");
+    } finally {
+      setLoading(false);
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
-    setFormData(prevState => ({
+    setFormData((prevState) => ({
       ...prevState,
       [name]: value,
     }));
+  };
+
+  const handlePopupClose = () => {
+    setShowPopup(false);
+    clearCart();
+    navigate("/");
   };
 
   return (
@@ -94,72 +147,19 @@ const CheckoutPage = () => {
           <div className="form-section">
             <h2>Shipping Information</h2>
             <div className="form-grid">
-              <div className="form-group">
-                <label htmlFor="name">Full Name</label>
-                <input
-                  type="text"
-                  id="name"
-                  name="name"
-                  value={formData.name}
-                  onChange={handleChange}
-                  required
-                />
-              </div>
-              <div className="form-group">
-                <label htmlFor="phone">Phone Number</label>
-                <input
-                  type="tel"
-                  id="phone"
-                  name="phone"
-                  value={formData.phone}
-                  onChange={handleChange}
-                  required
-                />
-              </div>
-              <div className="form-group">
-                <label htmlFor="location">Address</label>
-                <input
-                  type="text"
-                  id="location"
-                  name="location"
-                  value={formData.location}
-                  onChange={handleChange}
-                  required
-                />
-              </div>
-              <div className="form-group">
-                <label htmlFor="city">City</label>
-                <input
-                  type="text"
-                  id="city"
-                  name="city"
-                  value={formData.city}
-                  onChange={handleChange}
-                  required
-                />
-              </div>
-              <div className="form-group">
-                <label htmlFor="district">District</label>
-                <input
-                  type="text"
-                  id="district"
-                  name="district"
-                  value={formData.district}
-                  onChange={handleChange}
-                  required
-                />
-              </div>
-              <div className="form-group">
-                <label htmlFor="postalCode">Postal Code</label>
-                <input
-                  type="text"
-                  id="postalCode"
-                  name="postalCode"
-                  value={formData.postalCode}
-                  onChange={handleChange}
-                  required
-                />
-              </div>
+              {["name", "phone", "location", "city", "district", "postalCode"].map((field) => (
+                <div className="form-group" key={field}>
+                  <label htmlFor={field}>{field.charAt(0).toUpperCase() + field.slice(1)}</label>
+                  <input
+                    type="text"
+                    id={field}
+                    name={field}
+                    value={formData[field as keyof typeof formData]}
+                    onChange={handleChange}
+                    required
+                  />
+                </div>
+              ))}
             </div>
           </div>
 
@@ -169,8 +169,8 @@ const CheckoutPage = () => {
               {cart.length === 0 ? (
                 <p>Your cart is empty.</p>
               ) : (
-                cart.map(item => {
-                  const product = products.find(p => p.id === item.product_id);
+                cart.map((item) => {
+                  const product = products.find((p) => p.id === item.product_id);
                   if (!product) return null;
 
                   return (
@@ -185,10 +185,9 @@ const CheckoutPage = () => {
                               className="quantity-btn"
                               onClick={(e) => {
                                 e.stopPropagation();
-                                changeQuantity(item.product_id, 'minus');
+                                changeQuantity(item.product_id, "minus");
                               }}
                               disabled={item.quantity <= 1}
-                              aria-label="Decrease Quantity"
                             >
                               <Minus size={16} />
                             </button>
@@ -197,9 +196,8 @@ const CheckoutPage = () => {
                               className="quantity-btn"
                               onClick={(e) => {
                                 e.stopPropagation();
-                                changeQuantity(item.product_id, 'plus');
+                                changeQuantity(item.product_id, "plus");
                               }}
-                              aria-label="Increase Quantity"
                             >
                               <Plus size={16} />
                             </button>
@@ -210,7 +208,6 @@ const CheckoutPage = () => {
                               e.stopPropagation();
                               removeFromCart(item.product_id);
                             }}
-                            aria-label="Remove Item"
                           >
                             <Trash2 size={16} /> Remove
                           </button>
@@ -227,12 +224,27 @@ const CheckoutPage = () => {
             </div>
           </div>
 
-          <button type="submit" className="submit-button">
-            <Truck className="truck-icon" />
-            Complete Order
+          <button type="submit" className="submit-button" disabled={loading}>
+            {loading ? "Processing..." : (
+              <>
+                <Truck className="truck-icon" /> Complete Order
+              </>
+            )}
           </button>
         </form>
       </div>
+
+      {showPopup && (
+        <div className="popup-overlay">
+          <div className="popup-box">
+            <h2>Order Placed Successfully!</h2>
+            <p>Thank you for your purchase. Your order is being processed.</p>
+            <Link to="/" className="ok-button" onClick={handlePopupClose}>
+              OK
+            </Link>
+          </div>
+        </div>
+      )}
     </div>
   );
 };

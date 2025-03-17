@@ -127,3 +127,47 @@
     padding: 1.5rem;
   }
 }
+
+/* Google Sign-In Button */
+.google-signin-button {
+  background-color: #4285f4; /* Google blue */
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px;
+  width: 100%;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.google-signin-button:hover {
+  background-color: #357ae8; /* Darker Google blue */
+}
+
+/* Divider */
+.divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 20px 0;
+  color: #888;
+  font-size: 14px;
+}
+
+.divider span {
+  padding: 0 10px;
+  background-color: white;
+}
+
+.divider::before,
+.divider::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background-color: #ccc;
+}

@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import ProductPopup from './ProductPopup'; 
+import ProductPopup from './ProductPopup';
 import { useCart } from '../context/CartContext';
 import './ProductRecommendation.css';
+import { db } from '../firebase';
+import { logEvent } from 'firebase/analytics';
+import { addDoc, collection } from "firebase/firestore";
 
-// Districts data for dropdowns
 const districtsData = {
   Punjab: [
     "Attock", "Bahawalnagar", "Bahawalpur", "Bhakkar", "Chakwal", "Chiniot",
@@ -53,40 +55,34 @@ const customFields = [
 ];
 
 export default function ProductRecommendation() {
-  
   const [selectedProvince, setSelectedProvince] = useState('');
   const [customData, setCustomData] = useState({});
   const [recommendations, setRecommendations] = useState([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
   const [products, setProducts] = useState([]);
-  const [selectedProduct, setSelectedProduct] = useState(null); 
+  const [selectedProduct, setSelectedProduct] = useState(null);
   const { addToCart } = useCart();
-
 
   useEffect(() => {
     fetch('/products.json')
-    .then((response) => response.json())
-    .then((data) => {
-      console.log('Fetched products:', data); 
-      const updatedData = data.map((product: Product) => ({
-        ...product,
-        id: product.id ? String(product.id) : 'undefined-id',
-      }));
-      console.log('Updated products with IDs:', updatedData);
-      setProducts(updatedData);
-    })
-    .catch((error) => {
-      console.error('Error loading products:', error);
-    });
+      .then((response) => response.json())
+      .then((data) => {
+        const updatedData = data.map((product) => ({
+          ...product,
+          id: product.id ? String(product.id) : 'undefined-id',
+        }));
+        setProducts(updatedData);
+      })
+      .catch((error) => {
+        console.error('Error loading products:', error);
+      });
   }, []);
 
-  
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     setCustomData({ ...customData, [name]: value });
   };
-
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -95,12 +91,24 @@ export default function ProductRecommendation() {
     setLoading(true);
 
     try {
-      
       const requiredFields = ["N", "P", "K", "Temperature Range(°C)", "Humidity(%)", "pH Range", "Rainfall(mm)"];
       const missingFields = requiredFields.filter(field => !customData[field] || isNaN(parseFloat(customData[field])));
       if (missingFields.length > 0) {
         throw new Error(`Please fill in all fields: ${missingFields.join(", ")}`);
       }
+
+      const userData = {
+        province: selectedProvince,
+        city: document.getElementById('city').value,
+        ...customData,
+      };
+
+      await addDoc(collection(db, "userInputs"), userData);
+      logEvent(db, 'user_input_submitted', {
+        province: selectedProvince,
+        city: userData.city,
+        ...customData,
+      });
 
       const response = await fetch('http://localhost:5000/predict', {
         method: 'POST',
@@ -125,12 +133,15 @@ export default function ProductRecommendation() {
       setRecommendations(data.result);
     } catch (err) {
       setError(err.message);
+
+      logEvent(db, 'recommendation_failure', {
+        errorMessage: err.message,
+      });
     } finally {
       setLoading(false);
     }
   };
 
-  // Filter products based on recommended crops
   const getMatchingProducts = () => {
     const recommendedCropNames = recommendations.map(crop => crop.crop.toLowerCase());
     return products.filter(product =>
@@ -142,36 +153,15 @@ export default function ProductRecommendation() {
     <div className="recommendation-container">
       <h1>Product Recommendation</h1>
       <form onSubmit={handleSubmit} className="recommendation-form">
-        {/* Province Dropdown */}
-        <div className="dropdown-container">
-          <label htmlFor="province">Select Province:</label>
-          <select
-            id="province"
-            onChange={(e) => setSelectedProvince(e.target.value)}
-          >
-            <option value="">Select Province:</option>
-            {Object.keys(districtsData).map((province) => (
-              <option key={province} value={province}>{province}</option>
-            ))}
-          </select>
-
-          {/* District Dropdown */}
-          {selectedProvince && (
-            <>
-              <label htmlFor="district">Select District:</label>
-              <select id="district" disabled>
-                <option value="">Select District:</option>
-                {districtsData[selectedProvince].map((district) => (
-                  <option key={district} value={district}>{district}</option>
-                ))}
-              </select>
-            </>
-          )}
+        <div className="input-group">
+          <label htmlFor="city">City:</label>
+          <input
+            type="text"
+            id="city"
+            placeholder="Enter City"
+          />
         </div>
 
-        <div className="divider">OR</div>
-
-        {/* Custom Input Fields */}
         <div className="input-grid">
           {customFields.map((label) => (
             <div key={label} className="input-group">
@@ -188,7 +178,6 @@ export default function ProductRecommendation() {
           ))}
         </div>
 
-        {/* Submit Button */}
         <div className="form-actions">
           <button type="submit" disabled={loading}>
             {loading ? 'Loading...' : 'Submit'}
@@ -196,10 +185,8 @@ export default function ProductRecommendation() {
         </div>
       </form>
 
-      {/* Error Message */}
       {error && <p className="error">{error}</p>}
 
-      {/* Recommendations */}
       {recommendations.length > 0 && (
         <div className="results">
           <h3>Top Crop Recommendations:</h3>
@@ -211,7 +198,6 @@ export default function ProductRecommendation() {
             ))}
           </ul>
 
-          {/* Display Matching Products */}
           <div className="matching-products">
             <h3>Available Products:</h3>
             {getMatchingProducts().length > 0 ? (
@@ -226,7 +212,7 @@ export default function ProductRecommendation() {
                       <p className="price">${product.price}</p>
                       <button
                         className="view-details"
-                        onClick={() => setSelectedProduct(product)} 
+                        onClick={() => setSelectedProduct(product)}
                       >
                         View Details
                       </button>
@@ -241,12 +227,11 @@ export default function ProductRecommendation() {
         </div>
       )}
 
-      {/* Product Popup */}
       {selectedProduct && (
         <ProductPopup
           product={selectedProduct}
           isOpen={true}
-          onClose={() => setSelectedProduct(null)} // Close the popup
+          onClose={() => setSelectedProduct(null)}
         />
       )}
     </div>

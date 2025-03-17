@@ -1,13 +1,68 @@
-// ContactPage.tsx
-import React from 'react';
+import React, { useState } from 'react';
 import { FaMapMarkerAlt, FaEnvelope, FaPhone } from 'react-icons/fa';
 import './ContactPage.css';
+import { db } from '../../firebase'; 
+import { doc, setDoc } from 'firebase/firestore'; 
+import { logEvent } from 'firebase/analytics';
+import { analytics } from '../../firebase'; // Import the analytics instance
 
 const ContactPage = () => {
-  const handleSubmit = (e) => {
+  const [popupMessage, setPopupMessage] = useState('');
+  const [isSuccess, setIsSuccess] = useState(false);
+  const [showPopup, setShowPopup] = useState(false);
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    // Handle form submission (e.g., send data to backend or email service)
-    alert('Message sent successfully!');
+
+    // Get form data
+    const formData = {
+      name: e.currentTarget.name.value,
+      email: e.currentTarget.email.value,
+      subject: e.currentTarget.subject.value,
+      message: e.currentTarget.message.value,
+      timestamp: new Date().toISOString(), // Add a timestamp for reference
+    };
+
+    // Generate a custom document ID
+    const customDocId = `${formData.name.replace(/\s+/g, '_')}_${Date.now()}`;
+
+    try {
+      // Use the custom document ID with `setDoc`
+      await setDoc(doc(db, 'messages', customDocId), formData);
+
+      // Log success event in Firebase Analytics
+      logEvent(analytics, 'contact_form_submission_success', {
+        name: formData.name,
+        email: formData.email,
+        subject: formData.subject,
+      });
+
+      // Show success popup
+      setPopupMessage('Message sent successfully!');
+      setIsSuccess(true);
+    } catch (error) {
+      console.error('Error sending message:', error);
+
+      // Log failure event in Firebase Analytics
+      logEvent(analytics, 'contact_form_submission_failure', {
+        errorMessage: error.message,
+      });
+
+      // Show error popup
+      setPopupMessage('Failed to send message. Please try again.');
+      setIsSuccess(false);
+    }
+
+    // Show the popup
+    setShowPopup(true);
+
+    // Reset the form
+    e.currentTarget.reset();
+
+    // Hide the popup after 3 seconds
+    setTimeout(() => {
+      setShowPopup(false);
+    }, 3000);
   };
 
   return (
@@ -15,13 +70,20 @@ const ContactPage = () => {
       {/* Header */}
       <h1>Contact Us</h1>
 
+      {/* Popup Message */}
+      {showPopup && (
+        <div className={`popup ${isSuccess ? 'success' : 'error'}`}>
+          <p>{popupMessage}</p>
+        </div>
+      )}
+
       {/* Contact Form */}
       <form onSubmit={handleSubmit} className="contact-form">
         <h2>Send Us a Message</h2>
-        <input type="text" placeholder="Your Name" required />
-        <input type="email" placeholder="Your Email" required />
-        <input type="text" placeholder="Subject" />
-        <textarea placeholder="Your Message" rows="5" required></textarea>
+        <input type="text" name="name" placeholder="Your Name" required />
+        <input type="email" name="email" placeholder="Your Email" required />
+        <input type="text" name="subject" placeholder="Subject" />
+        <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
         <button type="submit">Send Message</button>
       </form>
 

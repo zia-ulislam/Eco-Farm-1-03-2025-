@@ -13,9 +13,10 @@ const SignUpForm: React.FC<SignUpFormProps> = ({ toggleForm }) => {
     dob: '',
     gender: '',
     email: '',
-    password: ''
+    password: '',
   });
   const [error, setError] = useState('');
+  const [isLoading, setIsLoading] = useState(false); // Loading state for submit button
   const navigate = useNavigate();
   const { signup } = useAuth();
 
@@ -26,24 +27,41 @@ const SignUpForm: React.FC<SignUpFormProps> = ({ toggleForm }) => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setError('');
+    setIsLoading(true); // Enable loading state
 
     try {
-      await signup(formData.email, formData.password);
-      navigate('/');
-    } catch (err) {
-      setError('Failed to create an account');
+      // Pass the full formData object to the signup function
+      await signup(formData);
+      navigate('/'); // Redirect to home page on success
+    } catch (err: any) {
+      console.error('Signup error:', err);
+
+      // Handle specific Firebase error codes
+      if (err.code === 'auth/email-already-in-use') {
+        setError('This email is already registered.');
+      } else if (err.code === 'auth/weak-password') {
+        setError('Password must be at least 6 characters long.');
+      } else if (err.code === 'auth/invalid-email') {
+        setError('Please enter a valid email address.');
+      } else {
+        setError('Failed to create an account. Please try again.');
+      }
+    } finally {
+      setIsLoading(false); // Disable loading state
     }
   };
 
   return (
     <form className="auth-form" onSubmit={handleSubmit}>
+      {/* Display error message */}
       {error && <div className="error-message">{error}</div>}
-      
+
       <div className="form-group">
         <input
           type="text"
           name="name"
           placeholder="Full Name"
+          value={formData.name}
           onChange={handleChange}
           required
         />
@@ -54,6 +72,7 @@ const SignUpForm: React.FC<SignUpFormProps> = ({ toggleForm }) => {
           type="text"
           name="fatherName"
           placeholder="Father's Name"
+          value={formData.fatherName}
           onChange={handleChange}
           required
         />
@@ -63,6 +82,7 @@ const SignUpForm: React.FC<SignUpFormProps> = ({ toggleForm }) => {
         <input
           type="date"
           name="dob"
+          value={formData.dob}
           onChange={handleChange}
           required
         />
@@ -74,6 +94,7 @@ const SignUpForm: React.FC<SignUpFormProps> = ({ toggleForm }) => {
             type="radio"
             name="gender"
             value="Male"
+            checked={formData.gender === 'Male'}
             onChange={handleChange}
             required
           />
@@ -84,6 +105,7 @@ const SignUpForm: React.FC<SignUpFormProps> = ({ toggleForm }) => {
             type="radio"
             name="gender"
             value="Female"
+            checked={formData.gender === 'Female'}
             onChange={handleChange}
           />
           Female
@@ -95,6 +117,7 @@ const SignUpForm: React.FC<SignUpFormProps> = ({ toggleForm }) => {
           type="email"
           name="email"
           placeholder="Email"
+          value={formData.email}
           onChange={handleChange}
           required
         />
@@ -105,13 +128,17 @@ const SignUpForm: React.FC<SignUpFormProps> = ({ toggleForm }) => {
           type="password"
           name="password"
           placeholder="Password"
+          value={formData.password}
           onChange={handleChange}
           required
         />
       </div>
 
-      <button type="submit" className="auth-button">Sign Up</button>
-      
+      {/* Submit button with loading state */}
+      <button type="submit" className="auth-button" disabled={isLoading}>
+        {isLoading ? 'Signing Up...' : 'Sign Up'}
+      </button>
+
       <p className="auth-switch">
         Already have an account?{' '}
         <button type="button" onClick={() => toggleForm('sign_in')}>
